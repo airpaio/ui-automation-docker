@@ -71,11 +71,13 @@ start = time.time()
 ui_auto.goto_url("https://airpa.io/login/") 
 ui_auto.wait_until_page_loads("default")  # initial landing page load completed
 landing_page_load_time = time.time() - start
+start = time.time()
 ui_auto.enter_text(username, '//*[@id="authcontainer"]/div[1]/input')
 ui_auto.enter_text(password, '//*[@id="authcontainer"]/div[2]/input')
 ui_auto.click_action('//*[@id="authcontainer"]/div[3]/button')
 ui_auto.wait_until_element_loads('//*[@id="authenticator"]/div[1]/h2')  # login completed
 login_time = time.time() - start
+start = time.time()
 ui_auto.click_action('//*[@id="menuIcon"]/div')
 ui_auto.wait_until_element_loads('//*[@id="signoutButton"]')
 ui_auto.click_action('//*[@id="signoutButton"]')
